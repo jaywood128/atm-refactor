@@ -7,14 +7,13 @@ const Account = () => {
 
   let totalState = 0; // Account total at Bank
   let transactionState = 0;
-  // let [totalState, setTotalState] = useState(0);
-  // let [transactionState, setTransactionState] = useState("");
+
   let status = `Account Balance: $${totalState}`;
 
   const handleChange = (event) => {
     console.log(`handleChange ${Number(event.target.value)}`);
     transactionState = Number(event.target.value);
-    // setTransactionState(Number(event.target.value));
+
     console.log(`Transaction state is now: ${transactionState}`);
   };
 
@@ -24,9 +23,6 @@ const Account = () => {
     status = `Account Balance $ ${totalState}`;
     document.getElementById("total").innerHTML = status;
     e.preventDefault();
-
-    // setTotalState(totalState + transactionState);
-    // setTransactionState("");
   };
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
